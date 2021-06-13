@@ -1,0 +1,22 @@
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+nav ul li {
+    flex: 1;
+    list-style: none;
+    margin: 0 10px 2px 0px;
+}
+
+.btn-primary-1 {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.btn-1 {
+    padding: 0;
+    border: none;
+}

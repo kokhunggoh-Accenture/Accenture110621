@@ -1,0 +1,9 @@
+<form class="contact" (ngSubmit)="onSubmit()">
+    Name
+    <input required>
+    Email
+    <input placeholder="email@example.com" required>
+    Message
+    <textarea maxlength="256" placeholder="I'm interested in..." required></textarea>
+    <button [disabled]="isLoading" id="submit" class="submit" type="submit">Submit</button>
+  </form>
