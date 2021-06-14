@@ -1,0 +1,16 @@
+footer {
+    margin: auto;
+    width: 50%;
+    padding-top: 30px;
+}
+
+footer nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer nav ul li {
+    flex: 1;
+    list-style: none;
+    margin-bottom: 2px;
+}

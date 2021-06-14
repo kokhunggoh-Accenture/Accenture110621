@@ -1,0 +1,11 @@
+header {
+    display: flex;
+}
+
+header{
+    border-bottom: 1px solid;
+}
+
+header div{
+    flex: 1;
+}

@@ -10,6 +10,9 @@ import { ContactComponent } from './contact/contact.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { DetailComponent } from './detail/detail.component';
 import { LocationComponent } from './location/location.component';
+import { UsersComponent } from './users/users.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { LocationComponent } from './location/location.component';
     AboutComponent,
     ContactComponent,
     DetailComponent,
-    LocationComponent
+    LocationComponent,
+    UsersComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

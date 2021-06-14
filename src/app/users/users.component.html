@@ -1,0 +1,66 @@
+<table class="table table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Website</th>
+        <th scope="col">Company</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of userServices; trackBy: trackByFn">
+      <tr>
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>
+            <table class="table table-hover">
+            <thead class="table-success">
+              <tr>
+                <th scope="col">Street</th>
+                <th scope="col">Suite</th>
+                <th scope="col">City</th>
+                <th scope="col">Zip</th>
+                <th scope="col">Geo Lat</th>
+                <th scope="col">Geo Lng</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{user.address.street}}</th>
+                <td>{{user.address.suite}}</td>
+                <td>{{user.address.city}}</td>
+                <td>{{user.address.zipcode}}</td>  
+                <td>{{user.address.geo.lat}}</td>
+                <td>{{user.address.geo.lng}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>{{user.phone}}</td>
+        <td><a href="https://{{user.website}}" target="_blank">{{user.website}}</a></td>
+        <td>
+            <table class="table table-hover">
+            <thead class="table-primary">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Catch Phrase</th>
+                <th scope="col">BS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{user.company.name}}</th>
+                <td>{{user.company.catchPhrase}}</td>
+                <td>{{user.company.bs}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
