@@ -13,6 +13,9 @@ import { LocationComponent } from './location/location.component';
 import { UsersComponent } from './users/users.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { SupplyComponent } from './supply/supply.component';
+import { SupplyHeadComponent } from './supply/supply-head/supply-head.component';
+import { SupplyBodyComponent } from './supply/supply-body/supply-body.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { HeaderComponent } from './header/header.component';
     LocationComponent,
     UsersComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    SupplyComponent,
+    SupplyHeadComponent,
+    SupplyBodyComponent,
   ],
   imports: [
     BrowserModule,
