@@ -1,23 +1,54 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MaincontentComponent } from './maincontent/maincontent.component'
-import { AboutComponent } from './about/about.component'
-import { ContactComponent } from './contact/contact.component'
-import { DetailComponent } from './detail/detail.component'
-import { LocationComponent } from './location/location.component'
-import { UsersComponent } from './users/users.component'
-import { SupplyComponent } from './supply/supply.component';
+import { AboutComponent } from './about/about.component';
+import { CareersComponent } from './careers/careers.component';
+import { ContactComponent } from './contact/contact.component';
+import { FeedbackDetailComponent } from './feedback-detail/feedback-detail.component';
+import { FeedbacksComponent } from './feedbacks/feedbacks.component';
+import { HomeComponent } from './home/home.component';
+import { IndustriesComponent } from './industries/industries.component';
+import { InsightsComponent } from './insights/insights.component';
+import { ListOfRegisteredUsersComponent } from './list-of-registered-users/list-of-registered-users.component';
+import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { Login } from './_guards/login.service';
+import { UnsavedChangesGuard } from './_guards/un-saved-changes-guard.service';
+
 
 const routes: Routes = [
-  { path : 'contact', component: ContactComponent},
-  { path : 'detail', component: DetailComponent},
-  { path : 'location', component: LocationComponent},
-  { path : 'users', component: UsersComponent},
-  { path : 'supply', component: SupplyComponent},
-  { path : 'about', component: AboutComponent, children: [
-    { path : 'maincontent', component: MaincontentComponent}
-  ]},
-  { path : '', redirectTo: "about", pathMatch: 'full'}
+  {
+    path:'', component: HomeComponent
+  },
+  {
+    path:'insights', component: InsightsComponent
+  },
+  {
+    path:'services', loadChildren: () => import('./services/services.module').then(m => m.ServicesModule)
+  },
+  {
+    path:'careers', component: CareersComponent
+  },
+  {
+    path:'industries', component: IndustriesComponent,canActivate:[Login]
+  },
+  {
+    path:'about', component: AboutComponent
+  },
+  {
+    path:'contact', component: ContactComponent
+  },
+  {
+    path:'login', component: LoginComponent,canDeactivate:[UnsavedChangesGuard]
+  },
+  {
+    path:'signup',component: ListOfRegisteredUsersComponent
+  },
+  {
+    path:'feedback-detail',component:  FeedbackDetailComponent
+  },
+  {
+    path:'**',component: PageNotFoundComponent
+  }
 ];
 
 @NgModule({

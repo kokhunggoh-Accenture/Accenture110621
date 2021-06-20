@@ -1,0 +1,34 @@
+.bg {
+    width: 100%;
+}
+
+.supplyChain{
+    position: relative;
+}
+
+.heading {
+    position: absolute;
+    left: 37%;
+    top: 50%;
+    font-size:xx-large;
+    font-weight: 700;
+    color: white;
+}
+
+.break {
+    position: absolute;
+    left: 35%;
+    top: 60%;
+    width: 38%;
+    height: 3px;
+    color: white;
+}
+
+.days {
+    position: absolute;
+    left: 37%;
+    top: 65%;
+    font-size:x-large;
+    font-weight: 700;
+    color: white;
+}

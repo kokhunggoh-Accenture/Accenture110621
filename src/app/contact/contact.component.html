@@ -1,9 +1,51 @@
-<form class="contact" (ngSubmit)="onSubmit()">
-    Name
-    <input required>
-    Email
-    <input placeholder="email@example.com" required>
-    Message
-    <textarea maxlength="256" placeholder="I'm interested in..." required></textarea>
-    <button [disabled]="isLoading" id="submit" class="submit" type="submit">Submit</button>
-  </form>
+<div class="container">
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
+          <div class="form-group">
+            <label>Name:</label>
+            <input type="text" class="form-control form-control-sm" #fname id="name" formControlName="name" [ngClass]="{'is-invalid':submitted && f.name.errors}" required> 
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <p *ngIf="!f.name.errors?.validatedEmpty" >
+                    Name is required
+                </p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email:</label>
+            <input type="email" class="form-control form-control-sm" #email id="email" formControlName="email" [ngClass]="{'is-invalid':submitted && f.email.errors}" required> 
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <p *ngIf="!f.email.errors.validatedEmpty" >
+                    Email is required
+                </p>
+                <p *ngIf="!f.email.errors.email" >
+                    Email is invalid
+                </p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Feedback:</label>
+            <textarea class="form-control form-control-sm" #feedback id="feedback" formControlName="feedback" [ngClass]="{'is-invalid':submitted && f.feedback.errors}" required></textarea>
+            <div *ngIf="submitted && f.feedback.errors" class="invalid-feedback">
+                <p *ngIf="!f.feedback.errors?.validatedEmpty" >
+                  Feedback is required
+                </p>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" >Contact Us</button>
+        </form>
+      </div>
+      <button id="showHide" class="btn btn-primary btn-block">Show / Hide Feedbacks</button><br>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-5">
+                  <input type="number" #icount placeholder="iteration count" id="count">
+              </div>
+              <div class="col-md-5">
+                <button id="iterate" class="btn btn-primary btn-block" (click)="updateIterate()">Iterate dummy data</button>
+              </div>
+          </div>
+      </div>
+      <app-feedbacks id="feedbacks" [userList]="contacts" [childCount]="iterationCount"></app-feedbacks>
+    </div>
+  </div>

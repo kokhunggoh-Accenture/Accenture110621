@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'accenture11062021'`, () => {
+  it(`should have as title 'angularAccenture'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('accenture11062021');
+    expect(app.title).toEqual('angularAccenture');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('accenture11062021 app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('angularAccenture app is running!');
   });
 });
