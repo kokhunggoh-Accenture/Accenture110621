@@ -1,24 +1,27 @@
-<div class="container">
-    <div class="row" >
-        <div class="col-md-7 card">
-            <div class="card-body" *ngFor="let story of bodyObj.body; index as i; first as isFirst">
+<div class="container card">
+    <div class="row card-body" >
+        <div class="col-md-7">
+            <div class="" *ngFor="let story of bodyObj.body; index as i; first as isFirst">
                 <h3>{{story.heading}}</h3>
-                <div *ngIf="isFirst; else elseBlock" class="fs-4 subhead">{{story.details}}</div>
+                <div *ngIf="isFirst; else elseBlock" class="fs-4 subhead justify-text">{{story.details}}</div>
                 <ng-template #elseBlock>
-                    <div class="fs-4">{{story.details}}</div>
+                    <div class="fs-4 justify-text">{{story.details}}</div>
                 </ng-template>
 
-                <div *ngIf="i==2;" class="">
-                    <div class="pt-3 pb-3" *ngFor="let opportunity of bodyObj.opportunities; let first = first">
-                        <div class="fs-4 fw-bold">{{opportunity.title}}</div>
-                        <div class="fs-6">{{opportunity.body}}</div>
+                <div *ngIf="i==2;" class="container">
+                    <div class="row" *ngFor="let opportunity of bodyObj.opportunities; let first = first">
+                        <div class="col-md-1 w-50"><img src="../../../assets/images/{{opportunity.img}}"></div>
+                        <div class="col-md-10 pt-3 pb-3">
+                            <div class="fs-4 fw-bold">{{opportunity.title}}</div>
+                            <div class="fs-6">{{opportunity.body}}</div>
+                        </div>
                     </div>
                 </div>
                 <br />
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
+        <div class="col-md-4 card-body">
+            <div class="card border-0">
                 <h2 class="">About the Authors</h2>
                 <div class="border-bottom pb-3" *ngFor="let author of bodyObj.authors; let first = first">
                     <div class="fs-4 fw-bold">{{author.name}}</div>
@@ -27,7 +30,7 @@
                     <a *ngIf='author.tw!=""' href="{{author.tw}}"><img class="w-25" src="../../../assets/images/twitter.jpeg"></a>
                 </div>
             </div>
-            <div class="card mt-5">
+            <div class="card mt-5 border-0">
                 <h2>Contributors</h2>
                 <div class="border-bottom pb-3" *ngFor="let contributor of bodyObj.contributors; let first = first">
                     <div class="fs-4 fw-bold">{{contributor.name}}</div>
