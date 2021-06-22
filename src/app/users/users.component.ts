@@ -296,6 +296,7 @@ export class UsersComponent implements OnInit {
   }
 
   deleteUser(id){
+    alert("Confirm to delete");
     this.userId = id;
     this._services.deleteUser(this.userId).subscribe({
       next: (data) => {
