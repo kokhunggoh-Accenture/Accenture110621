@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { UsersService } from '../_services/users.service';
 import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-users',

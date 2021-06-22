@@ -20,6 +20,7 @@ import { HeaderComponent } from './header/header.component';
 import { SupplyComponent } from './supply/supply.component';
 import { SupplyHeadComponent } from './supply/supply-head/supply-head.component';
 import { SupplyBodyComponent } from './supply/supply-body/supply-body.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SupplyBodyComponent } from './supply/supply-body/supply-body.component'
     HeaderComponent,
     SupplyComponent,
     SupplyHeadComponent,
-    SupplyBodyComponent
+    SupplyBodyComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

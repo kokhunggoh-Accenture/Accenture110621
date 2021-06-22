@@ -7,6 +7,7 @@ import { DetailComponent } from './detail/detail.component'
 import { LocationComponent } from './location/location.component'
 import { UsersComponent } from './users/users.component'
 import { SupplyComponent } from './supply/supply.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   { path : 'contact', component: ContactComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path : 'location', component: LocationComponent},
   { path : 'users', component: UsersComponent},
   { path : 'supply', component: SupplyComponent},
+  { path : 'signup', component: SignUpComponent},
   { path : 'about', component: AboutComponent, children: [
     { path : 'maincontent', component: MaincontentComponent}
   ]},

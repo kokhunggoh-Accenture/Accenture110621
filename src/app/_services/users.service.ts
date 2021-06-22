@@ -19,8 +19,8 @@ export class UsersService {
     return this.http.get(environment.apiHost + "users/" + id);
   }
   
-  createUser(id, payload):Observable<any>{
-    return this.http.put(environment.apiHost + "users/" + id, payload);
+  createUser(payload):Observable<any>{
+    return this.http.post(environment.apiHost + "users", payload);
   }
   
   deleteUser(id):Observable<any>{
