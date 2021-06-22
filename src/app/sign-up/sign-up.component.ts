@@ -16,7 +16,6 @@ export class SignUpComponent implements OnInit {
   userDetails:UserDetails;
   @ViewChild(ToastContainerDirective, { static: true })
   toastContainer: ToastContainerDirective;
-  @Output() PostDetails = new EventEmitter<UserDetails>();
   constructor(private formBuilder: FormBuilder, private _services: UsersService, private toastrService: ToastrService) {
     this.submitted = false;
    }
@@ -41,10 +40,7 @@ export class SignUpComponent implements OnInit {
     this.submitted = true;
     console.log(this.submitted);
     this.userDetails = this.registerForm.value; // store data from form to Users class
-    console.log(this.userDetails);
 
-    this.PostDetails.emit(this.userDetails);
-    //console.log(this.PostDetails);
     this.createUser(this.userDetails);
   }
 
