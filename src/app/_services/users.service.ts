@@ -20,11 +20,11 @@ export class UsersService {
   }
   
   createUser(payload):Observable<any>{
-    return this.http.post(environment.apiHost + "users", payload);
+    return this.http.post(environment.apiHost + "create-user", payload);
   }
   
   deleteUser(id):Observable<any>{
-    return this.http.delete(environment.apiHost + "users/" + id);
+    return this.http.delete(environment.apiHost + "delete-user/" + id);
   }
   
   updateUser(id, payload):Observable<any>{
@@ -36,6 +36,6 @@ export class UsersService {
       })
     };
 
-    return this.http.put(environment.apiHost + "users/" + id, JSON.stringify(payload), httpOptions);
+    return this.http.put(environment.apiHost + "update-user/" + id, JSON.stringify(payload), httpOptions);
   }
 }
