@@ -5,6 +5,7 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
 import { UserDataDisplayComponent } from '../user-data-display/user-data-display.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../_shared/shared/shared.module';
+import { ListOfRegisteredUsersRoutingModule } from './list-of-registered-users-routing.module';
 
 
 
@@ -14,6 +15,7 @@ import { SharedModule } from '../_shared/shared/shared.module';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    ListOfRegisteredUsersRoutingModule,
     SharedModule
   ]
 })
