@@ -1,24 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MaincontentComponent } from './maincontent/maincontent.component'
-import { AboutComponent } from './about/about.component'
-import { ContactComponent } from './contact/contact.component'
-import { DetailComponent } from './detail/detail.component'
-import { LocationComponent } from './location/location.component'
 import { UsersComponent } from './users/users.component'
 import { SupplyComponent } from './supply/supply.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
-  { path : 'contact', component: ContactComponent},
-  { path : 'detail', component: DetailComponent},
-  { path : 'location', component: LocationComponent},
-  { path : 'users', component: UsersComponent},
-  { path : 'supply', component: SupplyComponent},
-  { path : 'signup', component: SignUpComponent},
-  { path : 'about', component: AboutComponent, children: [
-    { path : 'maincontent', component: MaincontentComponent}
-  ]},
+  { path : 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)},
+  { path : 'detail', loadChildren: () => import('./detail/detail.module').then(m => m.DetailModule)},
+  { path : 'location', loadChildren: () => import('./location/location.module').then(m => m.LocationModule)},
+  { path : 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule)},
+  { path : 'supply', loadChildren: () => import('./supply/supply.module').then(m => m.SupplyModule)},
+  { path : 'signup', loadChildren: () => import('./sign-up/sign-up.module').then(m => m.SignUpModule)},
+  { path : 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule)},
+  { path : 'maincontent', loadChildren: () => import('./about/about.module').then(m => m.AboutModule)},
   { path : '', redirectTo: "about", pathMatch: 'full'}
 ];
 
