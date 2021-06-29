@@ -15,7 +15,7 @@
         <th scope="col">Actions</th>
       </tr>
     </thead>
-    <tbody *ngFor="let user of userServices | search: query; trackBy: trackByFn">
+    <tbody *ngFor="let user of (userServices | search: query); trackBy: trackByFn">
       <tr>
         <th scope="row">{{user.id}}</th>
         <td>{{user.name}}</td>

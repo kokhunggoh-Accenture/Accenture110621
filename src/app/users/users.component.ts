@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { UsersService } from '../_services/users.service';
 import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
+import { DataResponse } from '../_responses/dataResponse';
 
 @Component({
   selector: 'app-users',
@@ -20,14 +21,20 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     //this.id = this.route.snapshot.paramMap.get('id');
     this._services.getAllUsers().subscribe({
-      next: data => {
+      next: (data: DataResponse) => {
+        console.log(data);
+        if (data.code == 404){
+          this.showErrors(data.body, data.code);
+          return;
+        }
         this.userServices = data.body;
-        this.showSuccess(data.statusText, data.status);
+        this.showSuccess(data.message, data.code);
       },
-      error: err => {
-        console.log(err.message);
-        if (err.status == 404){
-          this.showErrors(err.message, err.status);
+      error: (err: any) => {
+        let errRes: DataResponse = err.error;
+        console.log(errRes);
+        if (errRes.code == 404){
+          this.showErrors(errRes.message, errRes.code);
         }
       }
     });

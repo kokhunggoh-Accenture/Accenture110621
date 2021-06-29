@@ -47,10 +47,14 @@ export class SignUpComponent implements OnInit {
   createUser(user){
     this._services.createUser(user).subscribe({
       next: (data) => {
-        this.showSuccess("Create user Success", 200);
+        if (data.code == 404){
+          this.showErrors(data.body, data.code);
+          return;
+        }
+        this.showSuccess("Create user Success", data.code);
       },
       error: err => {
-        console.log(err.message);
+        console.log(err);
         if (err.status == 404){
           console.log(err);
           this.showErrors(err.message, err.status);

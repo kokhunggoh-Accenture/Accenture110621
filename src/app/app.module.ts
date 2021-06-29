@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { SliderComponent } from './slider/slider.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { errorInterceptorProviders } from './_helpers/interceptors/http-error-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { HeaderComponent } from './header/header.component';
     ToastContainerModule, // ToastrModule added
     HttpClientModule
   ],
-  providers: [],
+  providers: [errorInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
