@@ -12,6 +12,7 @@ export class UsersComponent implements OnInit {
   userServices : any;
   user:any;
   posts:any;
+  public search: any = '';
   @ViewChild(ToastContainerDirective, { static: true })
   toastContainer: ToastContainerDirective;
   constructor(private _services: UsersService, private toastrService: ToastrService) { }
